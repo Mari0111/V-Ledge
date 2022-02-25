@@ -18,7 +18,6 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import ShoppingCart from "@mui/icons-material/ShoppingCart";
 
-
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -59,7 +58,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+export default function VNavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -237,23 +236,6 @@ export default function PrimarySearchAppBar() {
         {renderMobileMenu}
         {renderMenu}
       </Box>
-      {/* <h1>Index Body</h1>
-      <p>
-        Lorem ipsum dolor sit amet. Sed doloremque quasi ad suscipit placeat qui
-        voluptas voluptate! Eos rerum tempore ut rerum maxime in consequuntur
-        numquam vel rerum mollitia sit vero voluptatibus ea quidem corrupti non
-        nesciunt odio. Aut totam fugit aut corrupti molestias quo fugiat
-        commodi. At quia ducimus qui perferendis alias ut cumque architecto sit
-        odio sunt qui sequi culpa ut ipsa nesciunt. Est voluptates rerum At
-        doloremque fugit est sequi blanditiis id eaque veritatis. Et
-        voluptatibus doloribus dolore delectus vel reiciendis beatae aut quas
-        culpa et dolores ipsa? Ut deleniti deleniti a ipsam quidem ea debitis
-        veritatis. Ab vero omnis hic pariatur reiciendis et laboriosam eligendi
-        est iste voluptatum 33 molestiae galisum et mollitia odit ut totam
-        ipsum!
-      </p>
-
-      <Footer /> */}
     </div>
   );
 }
