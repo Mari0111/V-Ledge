@@ -17,6 +17,10 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import ShoppingCart from "@mui/icons-material/ShoppingCart";
+import { Link } from "@mui/material";
+
+
+
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -99,7 +103,7 @@ export default function VNavBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+       <Link href={"/Profile/"}><MenuItem onClick={handleMenuClose}>Profile</MenuItem></Link>
       <MenuItem onClick={handleMenuClose}>Log Out </MenuItem>
     </Menu>
   );
@@ -149,9 +153,13 @@ export default function VNavBar() {
           aria-haspopup="true"
           color="inherit"
         >
+           
           <AccountCircle />
+          
         </IconButton>
+       
         <p>Profile</p>
+        
       </MenuItem>
     </Menu>
   );
