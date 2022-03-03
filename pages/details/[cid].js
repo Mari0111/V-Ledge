@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid} from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import * as React from "react";
@@ -11,6 +11,8 @@ import Divider from "@mui/material/Divider";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 
+
+
 export default function Details() {
   const router = useRouter();
   const { cid } = router.query;
@@ -18,12 +20,14 @@ export default function Details() {
   return (
     <>
       <div>
-        <Grid container justifyContent={"flex-end"} alignItems={"flex-start"}>
-          <List
+        <Grid container justifyContent={"flex-end"}   >
+          <List 
             sx={{
+              display: 'flex',
+              flexDirection: 'column',
               width: "100%",
               maxWidth: 410,
-              bgcolor: "background.paper",
+              bgcolor: "background.paper", 
               position: "absolute",
               overflow: "auto",
               maxHeight: 550,
@@ -47,7 +51,7 @@ export default function Details() {
             ))}
           </List>
         </Grid>
-        <Image src="/flutter_vid.png" width="1100" height="550" />
+        <Image src="/flutter_vid.png" width="1100" height="550"  />
       </div>
       <div>
         <Grid paddingLeft={6} paddingRight={16}>

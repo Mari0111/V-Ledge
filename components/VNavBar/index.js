@@ -103,7 +103,7 @@ export default function VNavBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-       <Link href={"/Profile/"}><MenuItem onClick={handleMenuClose}>Profile</MenuItem></Link>
+       <Link href={"/EditProfile/"}><MenuItem onClick={handleMenuClose}>Profile</MenuItem></Link>
       <MenuItem onClick={handleMenuClose}>Log Out </MenuItem>
     </Menu>
   );

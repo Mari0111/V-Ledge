@@ -1,11 +1,13 @@
 import React from "react";
 import { Grid } from "@mui/material";
+import { padding } from "@mui/system";
 
 
 
 export default function VFooter() {
   return (
-    <div style={{ backgroundColor: "grey" }}>
+    <Grid >
+    <div style={{ backgroundColor: "grey", padding: 8}}>
       {/* <h1 style={{ color: "white", textAlign: "center" }}>Footer</h1> */}
       <p  style={{ color: "white", textAlign: "center" }}>© V-Ledge видео онлайн хичээл, сургалт 2022</p>
       <Grid paddingLeft={4}>
@@ -14,5 +16,6 @@ export default function VFooter() {
      <p  style={{ color: "white"  }}>И-мэйл: vledge@business.com</p>
      </Grid>
     </div>
+    </Grid>
   );
 }
