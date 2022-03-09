@@ -1,5 +1,4 @@
 import { Avatar, Grid, Stack } from "@mui/material";
-import Image from "next/image";
 import * as React from "react";
 
 
