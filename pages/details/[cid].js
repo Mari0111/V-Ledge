@@ -87,7 +87,7 @@ export default function Details() {
               <br />
             </p>
             <p>
-              {" "}
+           
               This course will be updates frequently as flutter and dart are in
               their <br /> early stages of development.
             </p>
@@ -114,7 +114,7 @@ export default function Details() {
                 <div>
                   <Grid marginTop={-2}>
                     <h3>Mayuresh Wankhede</h3>
-                    <p>Web / Android Developer & Instructor</p>
+                    <p>Web / Android Developer and Instructor</p>
                   </Grid>
                 </div>
               </Stack>
