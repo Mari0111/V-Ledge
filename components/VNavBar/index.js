@@ -19,9 +19,6 @@ import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import ShoppingCart from "@mui/icons-material/ShoppingCart";
 import { Link } from "@mui/material";
 
-
-
-
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -103,7 +100,9 @@ export default function VNavBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-       <Link href={"/EditProfile/"}><MenuItem onClick={handleMenuClose}>Profile</MenuItem></Link>
+      <Link href={"/EditProfile/"}>
+        <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      </Link>
       <MenuItem onClick={handleMenuClose}>Log Out </MenuItem>
     </Menu>
   );
@@ -153,20 +152,17 @@ export default function VNavBar() {
           aria-haspopup="true"
           color="inherit"
         >
-           
           <AccountCircle />
-          
         </IconButton>
-       
+
         <p>Profile</p>
-        
       </MenuItem>
     </Menu>
   );
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="sticky" style={{ background: "#fb8c00" }}>
+        <AppBar position="sticky" style={{ background: "#ffa726" }}>
           <Toolbar>
             <IconButton
               size="large"

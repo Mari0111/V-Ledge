@@ -1,29 +1,38 @@
-import * as React from "react";
-
+import React, {useEffect, useState} from "react";
 import NoteCard from "../components/NoteCard";
 import { Box, Grid } from "@mui/material";
+import axios from "axios";
+import Image from "next/image";
+import {mainServices} from "../services";
 
-export default function home() {
-  const data = [
-    { id: 1, title: "FLUTTER, DART" },
-    { id: 2, title: "HTML, CSS, JS" },
-    { id: 3, title: "REACT JS" },
-    { id: 4, title: "IT BASICS" },
-    { id: 5, title: "PYTHON" },
-    { id: 6, title: "NEXT JS" },
-    { id: 7, title: "CODING BEGINNER" },
-    { id: 8, title: "CODING ADVANCED" },
-    { id: 9, title: "AWS" },
-    { id: 10, title: "DATABASE" },
-  ];
+
+export default function home(props) {
+  const [data, setData] = useState([])
+  console.warn("props", props);
+  useEffect(() => {
+    mainServices.courses().then(function (response) {
+      // handle success
+      console.log(response.data);
+      setData(response.data)
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    console.log("-----");
+  },[]);
+console.log(data);
   return (
+    
     <div>
-      <h1>Online classes</h1>
-
+      {/* <h1>Online classes</h1> */}
+      <Grid container paddingBottom={10}>
+      <Image src="/elearning1.jpg" width="1519.2" height="500" />
+      </Grid>
       <div>
         <Grid container px={35} spacing={4}>
           {data.map((elem, index) => (
-            <Grid
+            <Grid 
               item
               xs={4}
               display={"flex"}

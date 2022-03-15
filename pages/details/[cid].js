@@ -1,7 +1,7 @@
-import { Grid} from "@mui/material";
+import { Grid } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import * as React from "react";
+import React, {useEffect, useState} from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -11,30 +11,36 @@ import Divider from "@mui/material/Divider";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 
-
-
 export default function Details() {
-  const router = useRouter();
-  const { cid } = router.query;
+  // const router = useRouter();
+  // const { cid } = router.query;
+  // useEffect(() => {
+  //   mainServices.courseDetails(cid)
+  // },[cid]);
 
   return (
     <>
       <div>
-        <Grid container justifyContent={"flex-end"}   >
-          <List 
+        <Grid container justifyContent={"flex-end"}>
+          <List
             sx={{
-              display: 'flex',
-              flexDirection: 'column',
+              
+              display: "flex",
+              flexDirection: "column",
               width: "100%",
-              maxWidth: 410,
-              bgcolor: "background.paper", 
+              maxWidth: 415,
+              bgcolor: "background.paper",
               position: "absolute",
               overflow: "auto",
               maxHeight: 550,
               "& ul": { padding: 0 },
+              background: "#fff3e0",
             }}
+            
             subheader={<li />}
+            
           >
+            
             {[1, 2, 3, 4, 5].map((sectionId) => (
               <li key={`section-${sectionId}`}>
                 <ul>
@@ -51,7 +57,7 @@ export default function Details() {
             ))}
           </List>
         </Grid>
-        <Image src="/flutter_vid.png" width="1100" height="550"  />
+        <Image src="/flutter_vid.png" width="1100" height="550" />
       </div>
       <div>
         <Grid paddingLeft={6} paddingRight={16}>
@@ -93,38 +99,44 @@ export default function Details() {
             <p>•Installed Android Studio/intellij/VSCode with flutter</p>
             <p>•Basic knowledge of dart language</p>
             <p>•Basic understanding of OOPS Concept</p>
-
           </Grid>
           <Divider />
 
           <p>Instructor</p>
           <Grid paddingLeft={30} marginTop={-4.5}>
-          <div>
-            <Stack direction="row" spacing={2}>
-              <Avatar
-                alt="Remy Sharp"
-                src="https://img.freepik.com/free-photo/portrait-expressive-young-man-wearing-formal-suit_273609-6943.jpg?size=626&ext=jpg"
-                sx={{ width: 60, height: 60 }}
-              />
-              <div >
-                <Grid marginTop={-2}>
-              <h3>Mayuresh Wankhede</h3>
-              <p >Web / Android Developer & Instructor</p>
-              </Grid>
-              </div>
-            </Stack>
-          </div>
-          
-          
-          <p>
-            Hi! I'm Mayuresh Wankhede. I'm a Web/ Android developer with a
-            strong focus on<br /> pragmatism and simplicity.I have completed my
-            bachelor degree in Computer <br />Science Engineering and I am skilled in many development
-            languages including Java,<br /> C++ , PHP and to name a few.
-          </p>
-          <p>I have been working on a diverse range of different software projects and I enjoy<br />  keeping up with time, constantly learning new languages, concepts, and techs.</p>
+            <div>
+              <Stack direction="row" spacing={2}>
+                <Avatar
+                  alt="Remy Sharp"
+                  src="https://img.freepik.com/free-photo/portrait-expressive-young-man-wearing-formal-suit_273609-6943.jpg?size=626&ext=jpg"
+                  sx={{ width: 60, height: 60 }}
+                />
+                <div>
+                  <Grid marginTop={-2}>
+                    <h3>Mayuresh Wankhede</h3>
+                    <p>Web / Android Developer & Instructor</p>
+                  </Grid>
+                </div>
+              </Stack>
+            </div>
 
-          <Divider />
+            <p>
+              Hi! I'm Mayuresh Wankhede. I'm a Web/ Android developer with a
+              strong focus on
+              <br /> pragmatism and simplicity.I have completed my bachelor
+              degree in Computer <br />
+              Science Engineering and I am skilled in many development languages
+              including Java,
+              <br /> C++ , PHP and to name a few.
+            </p>
+            <p>
+              I have been working on a diverse range of different software
+              projects and I enjoy
+              <br /> keeping up with time, constantly learning new languages,
+              concepts, and techs.
+            </p>
+
+            <Divider />
           </Grid>
         </Grid>
       </div>

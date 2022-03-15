@@ -15,7 +15,7 @@ export default function NoteCard({ item }) {
           component="img"
           alt="green iguana"
           height="140"
-          image="https://findstack.com/wp-content/uploads/2021/03/The-Ultimate-List-of-E-Learning-Statistics-1-800x450.jpg"
+          image={item.img}
         />
         <CardContent>
           <Fragment>
@@ -27,12 +27,11 @@ export default function NoteCard({ item }) {
           </Fragment>
 
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {item.description}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Share</Button>
+        
           <Link href={"/details/" + item.id}>
             <Button size="small">Learn More</Button>
           </Link>

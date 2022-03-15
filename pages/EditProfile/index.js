@@ -42,11 +42,13 @@ export default function EditProfile() {
       <nav aria-label="main mailbox folders">
         <List>
           <ListItem disablePadding>
+            
              <ListItemButton>
              <Link href={"/Profile/"}><ListItemIcon>
                 <PersonIcon />
               </ListItemIcon> </Link>
              <ListItemText primary="Public profile" />
+             
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -57,6 +59,7 @@ export default function EditProfile() {
               <ListItemText primary="My learning" />
             </ListItemButton>
           </ListItem>
+          <style>{'body { background: #fff3e0; }'}</style>
         </List>
       </nav>
       </Box>
