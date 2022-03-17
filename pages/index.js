@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import NoteCard from "../components/NoteCard";
 import { Box, Grid } from "@mui/material";
-import axios from "axios";
 import Image from "next/image";
 import {mainServices} from "../services";
 
@@ -12,8 +11,16 @@ export default function home(props) {
   useEffect(() => {
     mainServices.courses().then(function (response) {
       // handle success
-      console.log(response.data);
-      setData(response.data)
+      console.log("courses response",response);
+      setData(response)
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    mainServices.courseDetails("Bk4j9xWN5bsZs3ESWBD3").then(function (response) {
+      // handle success
+      console.log("lesson1 response",response);
     })
     .catch(function (error) {
       // handle error
@@ -21,7 +28,7 @@ export default function home(props) {
     })
     console.log("-----");
   },[]);
-console.log(data);
+
   return (
     
     <div>
