@@ -12,6 +12,9 @@ import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import axios from "axios";
 import { mainServices } from "../../services";
+import ReactPlayer from "react-player";
+
+
 
 export default function Details(props) {
   const router = useRouter();
@@ -60,7 +63,13 @@ export default function Details(props) {
             ))}
           </List>
         </Grid>
-        <Image src="/flutter_vid.png" width="1100" height="550" />
+        {/* <Image src="/flutter_vid.png" width="1100" height="550" /> */}
+        <div>
+          <ReactPlayer width={1100} height={550} controls url={item.videoUrl}/>
+        </div>
+      
+      
+      
       </div>
       <div>
         <Grid paddingLeft={6} paddingRight={16}>
