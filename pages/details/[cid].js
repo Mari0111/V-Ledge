@@ -40,18 +40,18 @@ export default function Details(props) {
               overflow: "auto",
               maxHeight: 550,
               "& ul": { padding: 0 },
-              background: "#fff3e0",
+              
             }}
             subheader={<li />}
           >
-            {[1, 2, 3, 4, 5].map((sectionId) => (
+            {[1].map((sectionId) => (
               <li key={`section-${sectionId}`}>
                 <ul>
-                  <ListSubheader>{`Section ${sectionId}: Flutter Course`}</ListSubheader>
+                  <ListSubheader>{`Course content`}</ListSubheader>
 
-                  {[1, 2, 3].map((item) => (
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((item) => (
                     <ListItem key={`item-${sectionId}-${item}`}>
-                      <ListItemText primary={`Item ${item}`} />
+                      <ListItemText primary={`Хичээл ${item}`} />
                       <PlayCircleOutline />
                     </ListItem>
                   ))}
@@ -79,19 +79,19 @@ export default function Details(props) {
           <Divider />
 
           <p>Description</p>
-          <Grid paddingLeft={30} marginTop={-4.5}>
+          <Grid paddingLeft={30} marginTop={-4.5} paddingRight={60}>
           
             <p>
             {item.courseDescription}
             </p>
            
-            <h5>What you'll learn</h5>
+            <h4>What you'll learn</h4>
             <p>{item.courseDescription2}</p>
           </Grid>
           <Divider />
 
           <p>Instructor</p>
-          <Grid paddingLeft={30} marginTop={-4.5}>
+          <Grid paddingLeft={30} marginTop={-4.5} paddingRight={60}> 
             <div>
               <Stack direction="row" spacing={2}>
                 <Avatar
@@ -112,7 +112,7 @@ export default function Details(props) {
               {item.introduction}
             </p>
 
-            <Divider />
+            
           </Grid>
         </Grid>
       </div>

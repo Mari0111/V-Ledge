@@ -59,7 +59,7 @@ export default function EditProfile() {
               <ListItemText primary="My learning" />
             </ListItemButton>
           </ListItem>
-          <style>{'body { background: #fff3e0; }'}</style>
+         
         </List>
       </nav>
       </Box>
