@@ -1,32 +1,22 @@
 import React, {useEffect, useState} from "react";
 import NoteCard from "../components/NoteCard";
-import { Box, Grid } from "@mui/material";
+import {Grid} from "@mui/material";
 import Image from "next/image";
 import {mainServices} from "../services";
 
 
-export default function home(props) {
+export default function home() {
   const [data, setData] = useState([])
-  console.warn("props", props);
   useEffect(() => {
     mainServices.courses().then(function (response) {
       // handle success
-      console.log("courses response",response);
       setData(response)
     })
     .catch(function (error) {
       // handle error
-      console.log(error);
+ 
     })
-    mainServices.courseDetails("Bk4j9xWN5bsZs3ESWBD3").then(function (response) {
-      // handle success
-      console.log("lesson1 response",response);
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    console.log("-----");
+
   },[]);
 
   return (

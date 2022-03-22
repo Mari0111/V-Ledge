@@ -1,5 +1,4 @@
 import { Grid } from "@mui/material";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import List from "@mui/material/List";
@@ -10,24 +9,20 @@ import PlayCircleOutline from "@mui/icons-material/PlayCircleOutline";
 import Divider from "@mui/material/Divider";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
-import axios from "axios";
 import { mainServices } from "../../services";
 import ReactPlayer from "react-player";
 
-
-
 export default function Details(props) {
-  const router = useRouter();
-  const {data} = props;
-  const { cid } = router.query;
+  const { data, lessons } = props;
+  const [selectedLesson, setSelectedLesson] = useState();
   const [item, setItem] = useState(data);
   // console.log("kekw", cid);
 
-  // useEffect(() => {
-  //   const temp = mainServices.courseDetails(cid);
-  //   setItem(temp);
-  // }, [cid]);
-  console.log("Selected item", item);
+  useEffect(() => {
+    if (lessons !== undefined && lessons[0] !== undefined) {
+      setSelectedLesson(lessons[0]);
+    }
+  }, [lessons]);
   return (
     <>
       <div>
@@ -43,7 +38,6 @@ export default function Details(props) {
               overflow: "auto",
               maxHeight: 550,
               "& ul": { padding: 0 },
-              
             }}
             subheader={<li />}
           >
@@ -52,12 +46,19 @@ export default function Details(props) {
                 <ul>
                   <ListSubheader>{`Course content`}</ListSubheader>
 
-                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((item) => (
-                    <ListItem key={`item-${sectionId}-${item}`}>
-                      <ListItemText primary={`Хичээл ${item}`} />
-                      <PlayCircleOutline />
-                    </ListItem>
-                  ))}
+                  {lessons !== undefined &&
+                    lessons.length > 0 &&
+                    lessons.map((item) => (
+                      <ListItem
+                        key={`item-${sectionId}-${item}`}
+                        onClick={() => {
+                          setSelectedLesson(item);
+                        }}
+                      >
+                        <ListItemText primary={`hicheel `} />
+                        <PlayCircleOutline />
+                      </ListItem>
+                    ))}
                 </ul>
               </li>
             ))}
@@ -65,11 +66,17 @@ export default function Details(props) {
         </Grid>
         {/* <Image src="/flutter_vid.png" width="1100" height="550" /> */}
         <div>
-          <ReactPlayer width={1100} height={550} controls url={item.videoUrl}/>
+          {selectedLesson !== undefined &&
+            selectedLesson.lesson !== undefined && (
+              <ReactPlayer
+                width={1100}
+                height={550}
+                controls
+                url={selectedLesson.lesson}
+              />
+            )}
+          {/* <ReactPlayer width={1100} height={550} controls url={selectedLesson.lesson} /> */}
         </div>
-      
-      
-      
       </div>
       <div>
         <Grid paddingLeft={6} paddingRight={16}>
@@ -89,18 +96,15 @@ export default function Details(props) {
 
           <p>Description</p>
           <Grid paddingLeft={30} marginTop={-4.5} paddingRight={60}>
-          
-            <p>
-            {item.courseDescription}
-            </p>
-           
+            <p>{item.courseDescription}</p>
+
             <h4>What you'll learn</h4>
             <p>{item.courseDescription2}</p>
           </Grid>
           <Divider />
 
           <p>Instructor</p>
-          <Grid paddingLeft={30} marginTop={-4.5} paddingRight={60}> 
+          <Grid paddingLeft={30} marginTop={-4.5} paddingRight={60}>
             <div>
               <Stack direction="row" spacing={2}>
                 <Avatar
@@ -117,11 +121,7 @@ export default function Details(props) {
               </Stack>
             </div>
 
-            <p>
-              {item.introduction}
-            </p>
-
-            
+            <p>{item.introduction}</p>
           </Grid>
         </Grid>
       </div>
@@ -133,13 +133,15 @@ export async function getServerSideProps(context) {
   const { params } = context;
 
   const pageId = params.cid;
-  console.log("PageID", pageId);
+
   const temp = await mainServices.courseDetails(pageId);
-  console.log("temp", temp);
+  const temp2 = await mainServices.getLessonsById(pageId);
+  console.log("temp2", temp2);
 
   return {
     props: {
       data: temp,
+      lessons: temp2,
     },
   };
 }

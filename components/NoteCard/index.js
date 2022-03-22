@@ -8,7 +8,6 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 
 export default function NoteCard({ item }) {
-  console.log("notecard ",item)
   return (
     <div>
       <Card sx={{ maxWidth: 345 }}>
@@ -32,12 +31,10 @@ export default function NoteCard({ item }) {
           </Typography>
         </CardContent>
         <CardActions>
-        
           <Link href={"/details/" + item.id}>
-            
-            <Button size="small" onClick={()=>{
-              console.log("selected item",item);
-            }}>Learn More</Button>
+            <Button size="small" onClick={() => {}}>
+              Learn More
+            </Button>
           </Link>
         </CardActions>
       </Card>
