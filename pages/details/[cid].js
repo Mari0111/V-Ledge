@@ -23,6 +23,7 @@ export default function Details(props) {
       setSelectedLesson(lessons[0]);
     }
   }, [lessons]);
+  console.log(lessons)
   return (
     <>
       <div>
@@ -41,27 +42,23 @@ export default function Details(props) {
             }}
             subheader={<li />}
           >
-            {[1].map((sectionId) => (
-              <li key={`section-${sectionId}`}>
                 <ul>
-                  <ListSubheader>{`Course content`}</ListSubheader>
-
                   {lessons !== undefined &&
                     lessons.length > 0 &&
                     lessons.map((item) => (
+                      
                       <ListItem
-                        key={`item-${sectionId}-${item}`}
+                        key={`item-${item.id}`}
                         onClick={() => {
                           setSelectedLesson(item);
                         }}
                       >
-                        <ListItemText primary={`hicheel `} />
+                        <ListItemText primary={item.lessonTitle} />
                         <PlayCircleOutline />
                       </ListItem>
-                    ))}
+                  ))}
                 </ul>
-              </li>
-            ))}
+      
           </List>
         </Grid>
         {/* <Image src="/flutter_vid.png" width="1100" height="550" /> */}
