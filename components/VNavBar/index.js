@@ -13,9 +13,9 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import { Link } from "@mui/material";
-import EventNoteIcon from '@mui/icons-material/EventNote';
-import SchoolIcon from '@mui/icons-material/School';
+import EventNoteIcon from "@mui/icons-material/EventNote";
+import SchoolIcon from "@mui/icons-material/School";
+import Link from "next/link";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -171,6 +171,7 @@ export default function VNavBar() {
             >
               <MenuIcon />
             </IconButton> */}
+
             <Typography
               variant="h6"
               noWrap
@@ -179,6 +180,7 @@ export default function VNavBar() {
             >
               V-Legde
             </Typography>
+
             {/* <Search>
               <SearchIconWrapper>
                 <SearchIcon />
@@ -190,23 +192,23 @@ export default function VNavBar() {
             </Search> */}
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
+              <IconButton
                 size="large"
                 aria-label="show 4 new mails"
                 color="inherit"
               >
-   
-                  <SchoolIcon />
-                
+                <Link href={"/classroom/"}>
+                <SchoolIcon />
+                </Link>
               </IconButton>
               <IconButton
                 size="large"
                 aria-label="show 4 new mails"
                 color="inherit"
               >
-    
+                <Link href={"/schedule/"}>
                   <EventNoteIcon />
-    
+                </Link>
               </IconButton>
               <IconButton
                 size="large"
@@ -214,7 +216,9 @@ export default function VNavBar() {
                 color="inherit"
               >
                 <Badge badgeContent={4} color="error">
-                  <NotificationsIcon  />
+                <Link href={"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}>
+                  <NotificationsIcon />
+                  </Link>
                 </Badge>
               </IconButton>
               <IconButton
