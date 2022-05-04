@@ -3,7 +3,9 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { Grid } from "@mui/material";
-import { Link } from "@mui/material";
+// import { Link } from "@mui/material";
+import Link from "next/link";
+
 export default function Classroom() {
   
     return (
