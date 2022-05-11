@@ -80,7 +80,7 @@ export default function Details(props) {
           {/* {cid }  */}
           {/* <a>Back to home</a> */}
 
-          <h2>About this course</h2>
+          <h2>Энэ хичээлийн талаар:</h2>
           <p>{item.about}</p>
 
           <Divider />
@@ -91,16 +91,16 @@ export default function Details(props) {
           </Grid>
           <Divider />
 
-          <p>Description</p>
+          <p>Хичээлийн тайлбар</p>
           <Grid paddingLeft={30} marginTop={-4.5} paddingRight={60}>
             <p>{item.courseDescription}</p>
 
-            <h4>What you'll learn</h4>
+            <h4>Энэ хичээлээс олж авах мэдлэг</h4>
             <p>{item.courseDescription2}</p>
           </Grid>
           <Divider />
 
-          <p>Instructor</p>
+          <p>Багш</p>
           <Grid paddingLeft={30} marginTop={-4.5} paddingRight={60}>
             <div>
               <Stack direction="row" spacing={2}>

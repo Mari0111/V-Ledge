@@ -40,7 +40,7 @@ export default function Classroom() {
 }
 const itemData = [
     {
-      img: 'https://www.21clhk.org/wp-content/uploads/2020/12/Creativity-in-Mathematics.png',
+      img: 'https://leverageedu.com/blog/wp-content/uploads/2020/02/Class-12-Maths-Syllabus.png',
       title: '201 МАТЕМАТИК',
       author: 'Ж. Тамир',
     },
@@ -55,7 +55,7 @@ const itemData = [
       author: 'Ө. Саруул',
     },
     {
-      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Japanese_language.svg/2560px-Japanese_language.svg.png',
+      img: 'https://livedoor.blogimg.jp/lol2/imgs/e/a/ea809916.gif',
       title: '204 Япон хэл',
       author: 'Мисато',
     },

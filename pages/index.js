@@ -24,7 +24,7 @@ export default function home() {
     <div>
       {/* <h1>Online classes</h1> */}
       <Grid container paddingBottom={10}>
-      <Image src="/elearning1.jpg" width="1519.2" height="500" />
+      {/* <Image src="/elearning1.jpg" width="1519.2" height="500" /> */}
       </Grid>
       <div>
         <Grid container px={35} spacing={4}>

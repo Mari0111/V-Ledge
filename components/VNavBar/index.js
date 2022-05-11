@@ -178,7 +178,7 @@ export default function VNavBar() {
               component="div"
               sx={{ display: { xs: "none", sm: "block" } }}
             >
-              V-Legde
+              V-Ledge
             </Typography>
 
             {/* <Search>
